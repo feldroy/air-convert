@@ -20,7 +20,7 @@ def main(target: Path, output: Path | None = None):
     html = target.read_text()
     result = html_to_airtags(html)
     if output is None:
-        console.print(result)
+        console.print(result, soft_wrap=True)
     else:
         output.write_text(result)
         console.print(f"Air Tags saved to {output}")
